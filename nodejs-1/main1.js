@@ -14,7 +14,7 @@
 // let obj={name:"siva",city:"Hyd"}
 
 
-const http=require("http")
+// const http=require("http")
 //  const server =http.createServer((req,res)=>{
 //     res.writeHead(201,"response message",{"content-type":"plain/text"})
 //     res.write(JSON.stringify(obj))
@@ -27,14 +27,14 @@ const http=require("http")
 
 
 // 
-const server=http.createServer((req,res)=>{
-    if(req.method=="GET"){
-        if(req.url=="one"){
-        res.write(JSON.stringify({movie:"one-nenokadine",hero:"GMB"}))
-        res.end()
-        }
-    }
-    res.end()
+// const server=http.createServer((req,res)=>{
+//     if(req.method=="GET"){
+//         if(req.url=="one"){
+//         res.write(JSON.stringify({movie:"one-nenokadine",hero:"GMB"}))
+//         res.end()
+//         }
+//     }
+//     res.end()
     //    else{
     //     res.end()
     //    } 
@@ -49,5 +49,31 @@ const server=http.createServer((req,res)=>{
     // else if(req.method=="PUT"){}
 
     // else if(req.method=="DELETE"){}
-})
-server.listen("3101",()=>{})
+// })
+// server.listen("3101",()=>{})
+
+
+
+    const http=require("http")
+
+    let obj={name:"siiva"}
+
+    const server=http.createServer((req,res)=>{
+        if(req.method=="GET")
+            if(req.url=="/names"){
+                { res.write(JSON.stringify(obj))
+                    res.end("")}
+            }
+            else{
+                res.end()
+            }
+            
+        else{
+            res.write("not found")
+            res.end()
+        }     
+        
+    })
+    server.listen("1900",()=>{
+        console.log("server is running")
+    })
