@@ -2,10 +2,10 @@
   "name": "nodejs-1",
   "version": "1.0.0",
   "description": "27r nodejs-classes",
-  "main": "main.js",
+  "main": "main1.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon main.js"
+    "start": "nodemon main1.js"
   },
   "author": "Siva",
   "license": "ISC",
