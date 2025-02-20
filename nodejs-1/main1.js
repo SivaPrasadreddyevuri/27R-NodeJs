@@ -54,14 +54,20 @@
 
 
 
-    const http=require("http")
+    const http=require("http");
 
-    let obj={name:"siiva"}
+    const url=require("url")
+
+
+    let non_Veg={item:"Chicken",price:"2*150",GST:"8%",message:"Thank you Visit Again",Quantity:qua}
 
     const server=http.createServer((req,res)=>{
+        const parsedURl=url.parse(req.url,true);
+        //  console.log(parsedURl)
+        const qua=(parsedURl.query.quantity);
         if(req.method=="GET")
-            if(req.url=="/names"){
-                { res.write(JSON.stringify(obj))
+            if(parsedURl.pathname="/names"){
+                { res.write(JSON.stringify(non_Veg))
                     res.end("")}
             }
             else{
@@ -74,6 +80,6 @@
         }     
         
     })
-    server.listen("1900",()=>{
+    server.listen("5000",()=>{
         console.log("server is running")
     })
